@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+html,body{
+    display: grid;
+    height: 100%;
+    place-items:center;
+    background: linear-gradient(375deg,#0b10b3,#08065c);
+}
+
+.wrapper{
+    height:400px;
+    width:320px;
+    position:relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+.wrapper .card{
+
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    border-radius: 10px;
+    padding: 5px;
+    transition:0.7s cubic-bezier(0.4,0.2, 0.2, 1);
+    transform: rotateY(0deg) translateZ(100px);
+    -webkit-transform: rotateY(0deg) translateZ(100px);
+  
+
+}
+.wrapper .card img{
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+   border-radius: 10px;
+}
+.wrapper .back-face{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content:space-evenly;
+   transform: rotateY(180deg);
+   -webkit-box-reflect: below 1px linear-gradient(transparent,#0005)
+
+
+}
+.wrapper:hover > .back-face{
+    transform:rotateY(0deg);
+    background-color:#f5e942;
+    color: #000000;
+    box-shadow: 0 0 5px  #f5e942 ,
+                0 0 25px #f5e942,
+                0 0 50px #f5e942,
+                0 0 200px #f5e942;
+    -webkit-box-reflect: below 1px linear-gradient(transparent,#0005)
+
+}
+.wrapper:hover > .front-face{
+    transform:rotateY(-180deg);
+    
+    -webkit-box-reflect: below 1px linear-gradient(transparent,#0005)
+
+}
+
+.wrapper .back-face img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    padding: 5px;
+    background:#fff;
+
+}
+.wrapper .back-face .info{
+    text-align: center;
+}
+.back-face .info .title{
+    font-size: 30px;
+    font-weight: 500;
+}
+.back-face ul{
+    display: flex;
+}
+.back-face  ul a{
+    display: block;
+    height: 40px;
+    width: 40px;
+    background:#08065c;
+    margin: 0 15px;
+    text-align: center;
+    line-height: 38px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    color:#fff;
+}
+.back-face ul a:hover{
+    background: none;
+    color: black;
+    border: 1px solid #0000;
+}
+
